@@ -1,0 +1,44 @@
+# BBR APF Studio — public landing repo
+# Keeps the source/build artifacts OUT if you ever clone raw source here.
+
+# Node
+node_modules/
+dist/
+.vite/
+*.log
+
+# Rust / Tauri
+target/
+Cargo.lock
+*.pdb
+*.exp
+*.lib
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Embedded Python runtime (never commit — huge + redundant, lives in installer)
+python-embedded/
+
+# Installer build outputs — upload via GitHub Releases, not into the repo
+*.exe
+*.msi
+*.apf
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.local
+credentials.json
+
+# OS
+*.bak

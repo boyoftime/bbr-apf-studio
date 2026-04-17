@@ -1,0 +1,90 @@
+BBR APF Studio — End User Licence
+Copyright (c) 2026 someless. All rights reserved.
+
+SUMMARY (plain English):
+  You may download and use BBR APF Studio free of charge for personal,
+  non-commercial modding of Beach Buggy Racing. You may not modify the
+  software, redistribute it, resell it, or reverse-engineer it.
+
+
+1. DEFINITIONS
+   "Software" means the BBR APF Studio application, installer, source files,
+   bundled Python runtime, compiled binaries, documentation, icons, splash
+   image, and all associated assets distributed together or separately under
+   the name "BBR APF Studio".
+   "Author" means someless (copyright holder).
+   "You" means the individual or entity exercising the rights granted herein.
+
+2. GRANT OF LICENCE
+   Subject to the terms of this Licence, the Author grants You a worldwide,
+   non-exclusive, non-transferable, revocable, royalty-free right to:
+   (a) download one (1) or more copies of the Software for personal use;
+   (b) install the Software on computing devices You own or control;
+   (c) use the Software to modify your own personally-owned copy of the game
+       "Beach Buggy Racing" for non-commercial purposes.
+
+3. RESTRICTIONS
+   You MAY NOT, without prior written permission from the Author:
+   (a) redistribute, re-upload, mirror, sell, sublicense, rent, lease, or lend
+       the Software or any portion thereof;
+   (b) modify, translate, adapt, port, merge, or create derivative works of
+       the Software;
+   (c) reverse-engineer, decompile, disassemble, extract, or otherwise attempt
+       to derive the source code, algorithms, or internal data formats of the
+       Software, except to the minimum extent permitted by applicable law that
+       cannot be excluded by contract;
+   (d) remove, obscure, or alter any copyright notices, trademarks, author
+       credits, version numbers, or licence notices contained in the Software;
+   (e) use the Software or any derivative thereof as part of, or included in,
+       a commercial product, paid service, or monetised offering;
+   (f) redistribute modifications of game files (mods) commercially, or in a
+       manner that infringes the game publisher's intellectual property.
+
+4. INTELLECTUAL PROPERTY
+   The Software is the sole and exclusive property of the Author and is
+   protected by copyright law and international treaty provisions. No
+   ownership of the Software transfers to You. All rights not expressly
+   granted in this Licence are reserved by the Author.
+
+5. THIRD-PARTY COMPONENTS
+   The Software bundles third-party open-source components (Python, Pillow,
+   NumPy, Tauri, CodeMirror, PyArmor runtime, and others). Those components
+   are governed by their own respective licences, which are not superseded by
+   this Licence and may be viewed in the installation directory or on the
+   upstream project repositories.
+
+6. GAME PUBLISHER DISCLAIMER
+   "Beach Buggy Racing" is a trademark of Vector Unit. The Author is not
+   affiliated with, endorsed by, or sponsored by Vector Unit. Use of the
+   Software to modify game files is done at the User's sole risk and may
+   violate the game publisher's Terms of Service; the User bears full
+   responsibility for compliance with any third-party agreements.
+
+7. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
+   THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, DATA LOSS, GAME-SAVE
+   CORRUPTION, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH
+   THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+8. TERMINATION
+   This Licence terminates automatically and without notice if You breach any
+   of its terms. Upon termination You must cease all use of the Software and
+   destroy all copies in your possession.
+
+9. GOVERNING LAW
+   This Licence is governed by the laws of the United Republic of Tanzania,
+   without regard to conflict-of-law principles. Any disputes shall be
+   resolved in the courts of Dar es Salaam.
+
+10. CONTACT
+    For licensing inquiries, commercial use, or permission requests:
+      YouTube : https://youtube.com/@someless
+      WhatsApp: +255 620 428 389
+
+
+------------------------------------------------------------------------------
+BBR APF Studio is free to use. Support the project if you can:
+  https://nowpayments.io/donation/someless
+------------------------------------------------------------------------------
