@@ -3,6 +3,30 @@
 All notable changes to **BBR APF Studio** are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.6.0] — 2026-04-19
+
+### 🎧 Sound modding (new)
+- **Sounds tab** — browse every music track and SFX sample extracted from the game's FMOD banks.
+- **In-app preview player** — custom play/pause button, professional scrubber with buffered-range indicator, volume slider, live time read-out, per-row loading spinner.
+- **Replace-sound** — pick any WAV from your disk; Studio automatically renames it to match the in-game sample name, re-encodes the parent FSB5 bank as PCM16, and patches every ancestor size field (WRAP / RIFF / SND / SNDH).
+- In-game playback verified — edited SFX actually play after repack (required a custom SNDH size-field fix not documented anywhere; vgmstream only reads, doesn't rebuild).
+
+### 💾 Workspace persistence
+- **Auto-restore on launch** — if you extracted or loaded a `.bbrws` in a previous session, Studio reopens straight into the editor with every edit intact. No re-import needed.
+- **Remembered `.bbrws` path** — after load or save, the filename pill below the topbar shows the current workspace. Sticky across app restarts via a tiny sidecar file.
+- **Smart Save** — Ctrl+S or the Save button writes to the known `.bbrws` path instantly; Save As always prompts. Amber ● dot indicates unsaved edits.
+- **Session Active banner** — clear source line ("Loaded from `X.bbrws`" vs. "Imported APFs"), with Start Fresh and Continue Editing buttons so manual import and `.bbrws` loading never get confused.
+
+### ⚡ Performance
+- **Save workspace 2-5× faster** — `.apf` / `.bin` / `.wav` / `.png` now stored uncompressed in the `.bbrws` zip (they're already compressed containers; deflating them was pure CPU cost). Text-like assets still deflated for size.
+- **Parallel baseline hashing** — the post-extract baseline write and pre-pack change scan now use rayon to hash files across all CPU cores (3-6× faster on modern multicore).
+- **Sounds search debounced** — the filter input rebuilds the list via `DocumentFragment` and debounces at 80 ms, keeping the UI smooth with 1000+ samples.
+
+### Fixed
+- FSB5 SNDH chunk size-field is now patched on bank rebuild — without this, FMOD silently stops reading the bank at the old length and replaced SFX never play.
+- Audio cache-bust: replacing a sound no longer plays the previous version from cache; per-sound timestamp token forces a fresh fetch.
+- Workspace filename pill layout moved into a dedicated bar below the topbar, eliminating collisions with the brand logo, 100% FREE badge, and SUBSCRIBE button on narrow windows.
+
 ## [1.5.0] — 2026-04-17
 
 ### 🎉 First public release.

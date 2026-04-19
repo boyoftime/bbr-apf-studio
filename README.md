@@ -8,7 +8,7 @@
 
 **Edit `.apf` files &middot; change powerups &middot; retexture cars &middot; repack &middot; 100% free**
 
-[![Version](https://img.shields.io/badge/version-1.5.0-22d3ee?style=for-the-badge)](#download)
+[![Version](https://img.shields.io/badge/version-1.6.0-22d3ee?style=for-the-badge)](#download)
 [![License](https://img.shields.io/badge/license-free%20to%20use-10b981?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-0ea5e9?style=for-the-badge)](#download)
 [![YouTube](https://img.shields.io/badge/YouTube-%40someless-ff0033?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@someless)
@@ -60,6 +60,12 @@ If you've ever wanted to:
 - Paint / resize / replace **620+ PNGs** with any image editor (Paint, GIMP, Photoshop, Krita).
 - Delete-and-paste workflow works perfectly — the repacker auto-detects edits via modification time.
 
+### 🎧 Sound modding (new in 1.6)
+- Browse every music track and SFX sample extracted straight from the game's FMOD banks.
+- **In-app preview player** with play/pause, scrubber, buffered-range indicator, volume, and per-row loading spinner.
+- Drop any WAV in to replace a sound — Studio matches the original name, re-encodes as PCM16, and patches every FSB5 size field so the game actually plays the new audio.
+- Cross-session workspace — close the app mid-edit, reopen, continue exactly where you left off.
+
 ### 🧬 Level scene editing
 - Move, delete, duplicate, or **scale** any entity on any track.
 - Pre-built recipes for **giant trees**, **sky-rain powerups**, **no-powerup purist mode**.
@@ -110,7 +116,7 @@ Grab the latest installer from the [**GitHub Releases**](https://github.com/some
 ## How to use
 
 ### Step 1 — Install
-Run `BBR APF Studio_1.5.0_x64-setup.exe`. Standard Windows installer — Start-menu shortcut + desktop icon.
+Run `BBR APF Studio_1.6.0_x64-setup.exe`. Standard Windows installer — Start-menu shortcut + desktop icon.
 
 ### Step 2 — Launch & import
 Open **BBR APF Studio**. On the **Import** tab, pick your game's `Assets.apf` (required) and optionally `Expansion.apf`. The files live in your Beach Buggy Racing install folder — typically under `C:\Program Files\WindowsApps\VectorUnit.BeachBuggyRacing_...\` (Microsoft Store version) or wherever you installed it manually.
@@ -214,7 +220,7 @@ This is an **unofficial** community tool. Beach Buggy Racing is © Vector Unit. 
 
 ### Happy modding
 
-Built with ❤️ by **[someless](https://youtube.com/@someless)** &middot; **v1.5.0** &middot; **2026**
+Built with ❤️ by **[someless](https://youtube.com/@someless)** &middot; **v1.6.0** &middot; **2026**
 
 If BBR Studio helped you, a ⭐ on this repo goes a long way.
 
