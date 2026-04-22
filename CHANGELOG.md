@@ -3,6 +3,23 @@
 All notable changes to **BBR APF Studio** are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.7.0] — 2026-04-23
+
+### 🎁 Mod Config export (new)
+- **New "Mod Config" tab (step 6)** — package just the files you changed into a small `.bbc` file instead of sharing the full 100+ MB modded APF. Perfect for publishing mods or pairing with BBR Manager V3.
+- **Selective export** — the tab lists every changed file grouped by category (Databases, Textures, Music, SFX, Level Templates, Track Scripts, Localisation). Tick only what belongs to *this* mod; leave the rest of your in-progress edits in the workspace.
+- **Metadata form** — mod name, author, version, game (BBR1 / BBR2), description, optional thumbnail PNG. Required fields guarded; auto-generated safe filename like `rocket-turbo-v1.0.bbc`.
+- **Target auto-detection** — Studio infers whether the `.bbc` targets `Assets.apf`, `Expansion.apf`, or both, based on the selected files' paths.
+- **Cross-category selection UI** — per-category "select all" checkbox with tri-state (all / some / none), live file/selected/size counters, search filter across names and paths.
+- **No-baseline warning** — if the workspace has no baseline (`.bbrws` loaded without one, or extracted with "Skip baseline"), the tab shows a clear amber warning with a "Go to Import" button instead of dumping every file as "changed".
+
+### File format
+- `.bbc` is a zip containing `manifest.json` (mod metadata + file list with blake3 hashes) and `files/<rel>` payload mirroring the extracted workspace tree. PNGs, APFs, WAVs, etc. are stored uncompressed (already-compressed containers); text files are deflated.
+
+### Under the hood
+- New Tauri commands `list_changed_files` and `export_bbc` — reuse the existing baseline hashing pipeline for zero duplicate work. Baseline detection is parallel via rayon.
+- Path-safety checks on export (`..` rejection) so a malformed workspace can't write outside the zip.
+
 ## [1.6.0] — 2026-04-19
 
 ### 🎧 Sound modding (new)

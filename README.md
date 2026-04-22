@@ -8,7 +8,7 @@
 
 **Edit `.apf` files &middot; change powerups &middot; retexture cars &middot; repack &middot; 100% free**
 
-[![Version](https://img.shields.io/badge/version-1.6.0-22d3ee?style=for-the-badge)](#download)
+[![Version](https://img.shields.io/badge/version-1.7.0-22d3ee?style=for-the-badge)](#download)
 [![License](https://img.shields.io/badge/license-free%20to%20use-10b981?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-0ea5e9?style=for-the-badge)](#download)
 [![YouTube](https://img.shields.io/badge/YouTube-%40someless-ff0033?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@someless)
@@ -59,6 +59,13 @@ If you've ever wanted to:
 - Opens your APF's texture folder in Windows Explorer.
 - Paint / resize / replace **620+ PNGs** with any image editor (Paint, GIMP, Photoshop, Krita).
 - Delete-and-paste workflow works perfectly — the repacker auto-detects edits via modification time.
+
+### 🎁 Mod Config export (new in 1.7)
+- New **Mod Config** tab packages just the files you changed into a tiny `.bbc` file other players can import — instead of sharing a 100+ MB modded APF.
+- **Selective export** — browse every changed file grouped by category (Databases, Textures, Music, SFX, Level Templates, Track Scripts, Localisation), tick only the ones that belong to *this* mod, leave the rest of your workspace edits out.
+- **Rich metadata** — mod name, author, version, description, target APF (auto-detected), optional thumbnail PNG.
+- **No baseline? No guessing.** If the workspace lacks a baseline (e.g. `.bbrws` loaded without one), Studio shows a clear amber warning with a "Go to Import" button instead of dumping every file as "changed".
+- Works hand-in-hand with **BBR Manager V3** — players import `.bbc` mods, toggle them on/off, and the Manager rebuilds the APFs from a pristine baseline every time. Installing and removing mods is always clean.
 
 ### 🎧 Sound modding (new in 1.6)
 - Browse every music track and SFX sample extracted straight from the game's FMOD banks.
@@ -116,7 +123,7 @@ Grab the latest installer from the [**GitHub Releases**](https://github.com/some
 ## How to use
 
 ### Step 1 — Install
-Run `BBR APF Studio_1.6.0_x64-setup.exe`. Standard Windows installer — Start-menu shortcut + desktop icon.
+Run `BBR APF Studio_1.7.0_x64-setup.exe`. Standard Windows installer — Start-menu shortcut + desktop icon.
 
 ### Step 2 — Launch & import
 Open **BBR APF Studio**. On the **Import** tab, pick your game's `Assets.apf` (required) and optionally `Expansion.apf`. The files live in your Beach Buggy Racing install folder — typically under `C:\Program Files\WindowsApps\VectorUnit.BeachBuggyRacing_...\` (Microsoft Store version) or wherever you installed it manually.
@@ -220,7 +227,7 @@ This is an **unofficial** community tool. Beach Buggy Racing is © Vector Unit. 
 
 ### Happy modding
 
-Built with ❤️ by **[someless](https://youtube.com/@someless)** &middot; **v1.6.0** &middot; **2026**
+Built with ❤️ by **[someless](https://youtube.com/@someless)** &middot; **v1.7.0** &middot; **2026**
 
 If BBR Studio helped you, a ⭐ on this repo goes a long way.
 
