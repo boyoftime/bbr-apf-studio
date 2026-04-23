@@ -3,6 +3,11 @@
 All notable changes to **BBR APF Studio** are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.7.3] — 2026-04-23
+
+### Security / hardening
+- Swept the remaining plaintext toolkit scripts and obfuscated all of them: `toolkit_sound_extract.py`, `toolkit_sound_repack.py`, `tools/bank_encode.py`, `tools/fsb5_decode.py`, `tools/fsb5_encode.py`. The entire bundled Python toolkit now ships as encrypted bytecode — no readable source left in the install directory.
+
 ## [1.7.2] — 2026-04-23
 
 ### Security / hardening
