@@ -3,6 +3,18 @@
 All notable changes to **BBR APF Studio** are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.7.2] — 2026-04-23
+
+### Security / hardening
+- Re-obfuscated the newly-fixed packer scripts (`toolkit_3_pack.py`, `tools/apf_pack.py`) with PyArmor 9.2.4. Ships as encrypted bytecode so the toolkit source isn't readable from the installed folder.
+- No functional changes — identical behaviour to 1.7.1, just with source concealed again.
+
+## [1.7.1] — 2026-04-23
+
+### Fixed
+- **Music stream replacements now actually apply.** A stale bundled `apf_pack.py` was silently ignoring edited WAVs in `VuAudioStreamAsset/` at repack time, so your replaced music track stayed original in-game. Studio now ships the current packer that detects and re-encodes music WAVs correctly.
+- **Repack script reworked to split concerns cleanly** — script dir holds the toolkit (`tools/apf_pack.py`), working directory holds the user's workspace. Progress emitted as `PROGRESS:N` for a smooth progress bar during pack.
+
 ## [1.7.0] — 2026-04-23
 
 ### 🎁 Mod Config export (new)
