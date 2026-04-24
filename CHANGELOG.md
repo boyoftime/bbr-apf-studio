@@ -3,6 +3,19 @@
 All notable changes to **BBR APF Studio** are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.8.1] — 2026-04-24
+
+### Mod Config UX polish
+- **Mod Config tab is now always clickable** — no need to import an APF first. Author a `.bbc` from scratch, re-import an existing one to edit, or drop in texture replacements without any workspace extraction step.
+- Tab rendered in **gold + bold** to visually separate the authoring surface from the numbered Import → Edit → … → Repack pipeline.
+
+### Password field polish
+- The **Edit password** field in the Mod Metadata panel now has a framed pill with a lock icon on the left and an eye toggle on the right. Click the eye to reveal / hide the password; focus lifts a subtle cyan ring around the input.
+- The **Edit-protected mod** dialog (shown when re-importing a locked `.bbc`) gets the same treatment — lock icon, monospace input, eye toggle, placeholder hint. Always opens masked even after a previous reveal.
+
+### Thumbnail preview
+- Thumbnail in the Mod Metadata panel now renders in a fixed **16:9 frame** with `object-fit: cover` — no more oddly stretched or vertically-cropped previews. Subtle inner shadow gives it depth.
+
 ## [1.8.0] — 2026-04-24
 
 ### ⚡ New `.bbc` format — v2 (authored mods, not scanned)
