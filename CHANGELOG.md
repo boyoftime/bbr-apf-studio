@@ -3,6 +3,40 @@
 All notable changes to **BBR APF Studio** are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.8.0] — 2026-04-24
+
+### ⚡ New `.bbc` format — v2 (authored mods, not scanned)
+- **Mod Config tab fully rewritten.** No more baseline-scan workflow. You now *author* a mod explicitly: add JSON patches (only the keys you want to inject) and drop file replacements into a dedicated folder.
+- **JSON patches with two strategies.**
+  - `merge` (RFC 7396 JSON Merge Patch) — deep-merges your payload into the base file. Nested objects merge recursively, `null` deletes a key, arrays replace wholesale. Multiple mods can now stack on the same file without clobbering each other, as long as they don't touch the same leaf key.
+  - `replace` — clobbers the entire file (the old v1 behaviour).
+- **Patch authoring dialog** — dedicated CodeMirror-powered editor with the same material-ocean theme as the main Edit tab: JSON syntax highlighting, line numbers, bracket matching, code folding, live lint underlines, and the existing multi-error linter. Wide by default (`min(1180px, 96vw)`) and grows vertically to fill the dialog height. Backdrop/Esc dismissal disabled so a stray click doesn't nuke an in-progress payload — only the ✕ button and Cancel close the dialog.
+- **Target path autocomplete** — the Target input shows a live datalist of every `.bin.json` in the current workspace, so you rarely need to type the path by hand.
+- **Per-patch preview + edit/remove** — each saved patch renders as a card in the authoring panel with badge, path, size, collapsed JSON preview, and Edit / Remove actions.
+
+### 📦 File replacements — any binary, not just PNG
+- The authoring folder now accepts **any file**, not only PNG. Audio (`wav`, `ogg`, `mp3`, `fsb`), level binaries (`bin`), images (`png`, `jpg`, `webp`), and anything else the `.bbc` replace path can overlay.
+- Panel renamed to **File Replacements**. Each row shows a tinted extension badge (PNG blue, WAV/OGG/MP3/FSB purple, BIN green, other grey) so a mixed bag of replacements is scannable at a glance.
+- Walkers now skip OS metadata and editor clutter — `Thumbs.db`, `desktop.ini`, dotfiles, `.tmp`, `.crdownload`, `.part` are all filtered out so they never sneak into a shipped mod.
+- Manifest category for each replacement is computed from its APF path (`Textures`, `Music`, `SFX`, `Level Templates`, `Track Scripts`, …) instead of a hard-coded "Textures".
+
+### 📥 Re-import a `.bbc` for editing
+- New **📥 Import .bbc…** button lets you open any v2 mod you've already exported (or downloaded) and pull its patches, file replacements, metadata, and thumbnail straight back into the authoring surface. Edit anything, export a new version.
+- Import wipes and repopulates the authoring state cleanly (with a confirm prompt if you have unsaved patches so you don't nuke your work).
+
+### 🔐 Optional edit password (Studio-only gate)
+- New **Edit password** field in the Mod Metadata panel. Leave it blank to keep the mod openly re-editable. Set it to stamp a blake3 hash of the password onto `manifest.editPasswordHash`.
+- On re-import, Studio checks the hash and prompts for the password — wrong password rejects the load with a clear error.
+- **BBR Manager ignores the hash entirely.** The payloads inside `files/` stay plaintext, so password-locked mods apply in-game without asking for anything. The lock is an honest obfuscation layer, not encryption (the `.bbc` is still just a zip).
+
+### 🧰 Schema bump — manifest v2 only
+- v2 mods carry two arrays (`patches[]`, `textures[]`) instead of the single v1 `files[]`. Each entry records `patchType` (`merge` | `replace`), hash, size, category, and target APF.
+- v1 mods are refused on import with a clear message asking the user to re-author in the latest Studio. Keeps the apply pipeline honest.
+
+### Breaking
+- The old baseline-scan Mod Config workflow is gone. Workspaces extracted with the previous flow still work for editing; only the *export* step is new.
+- v1 `.bbc` files cannot be imported into Studio or applied in BBR Manager v3.5+. Re-author them in the new Studio to regenerate as v2.
+
 ## [1.7.3] — 2026-04-23
 
 ### Security / hardening
