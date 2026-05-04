@@ -3,6 +3,18 @@
 All notable changes to **BBR APF Studio** are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.9.0] — 2026-05-04
+
+### Added
+- **BBR2 APF support promoted into Studio.** The bundled toolkit now handles BBR2 JSON tables, PNG texture decode/repack, and APF compression variants used by desktop and Android builds.
+- **Optional `HF.apf` import card.** Import now supports `Assets.apf`, optional `Expansion.apf`, and optional `HF.apf`.
+- **Multi-APF repack loop.** Studio repacks every imported `.apf` archive instead of hardcoding only Assets/Expansion.
+- **Embedded `etcpak` encoder.** Android ETC/ETC2 texture replacements can be re-encoded inside the self-contained installer.
+
+### Changed
+- Compatibility docs now list BBR1 PC/Android and BBR2 desktop/Android APF workflows as supported.
+- Texture and sound panels now scan imported APF folders dynamically, so extra archives such as `HF.apf` appear naturally when present.
+
 ## [1.8.1] — 2026-04-24
 
 ### Mod Config UX polish

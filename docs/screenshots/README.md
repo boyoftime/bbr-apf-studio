@@ -5,7 +5,7 @@ Drop these PNG files here before pushing to GitHub. The main `README.md` referen
 | Filename | What it should show |
 |---|---|
 | `logo.png` | The BBR Studio logo (splash.png from the app works great, 320px wide) |
-| `import.png` | The **Import** screen with both APF cards and the hero logo |
+| `import.png` | The **Import** screen with `Assets.apf`, `Expansion.apf`, and optional `HF.apf` cards |
 | `editor.png` | The **Edit** screen with a JSON file open in Smart Form mode (showing hint tooltips would be perfect) |
 | `raw-json.png` | The **Edit** screen with Raw JSON mode active, showing syntax highlighting and a red lint underline |
 | `textures.png` | The **Textures** screen with the PNG count + Open Folder buttons |

@@ -8,7 +8,7 @@
 
 **Edit `.apf` files &middot; change powerups &middot; retexture cars &middot; repack &middot; 100% free**
 
-[![Version](https://img.shields.io/badge/version-1.8.1-22d3ee?style=for-the-badge)](#download)
+[![Version](https://img.shields.io/badge/version-1.9.0-22d3ee?style=for-the-badge)](#download)
 [![License](https://img.shields.io/badge/license-free%20to%20use-10b981?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-0ea5e9?style=for-the-badge)](#download)
 [![YouTube](https://img.shields.io/badge/YouTube-%40someless-ff0033?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@someless)
@@ -31,7 +31,7 @@
 
 ## What is this?
 
-**BBR APF Studio** is the world's first beginner-friendly modding tool for **Beach Buggy Racing** (BBR1) — the popular Vector Unit arcade racer. It opens the game's proprietary `.apf` archive files, extracts every editable database and texture, lets you edit them with a friendly GUI, and repacks the result so you can drop the modded files straight into your game install.
+**BBR APF Studio** is the world's first beginner-friendly modding tool for **Beach Buggy Racing** and **Beach Buggy Racing 2**. It opens Vector Unit `.apf` archive files, extracts editable databases, textures, and audio, lets you edit them with a friendly GUI, and repacks the result so you can drop the modded files straight into your game install.
 
 No coding, no command line, no Python setup. Just click, edit, export.
 
@@ -57,7 +57,8 @@ If you've ever wanted to:
 
 ### 🎨 Texture hot-swap
 - Opens your APF's texture folder in Windows Explorer.
-- Paint / resize / replace **620+ PNGs** with any image editor (Paint, GIMP, Photoshop, Krita).
+- Paint / resize / replace PNGs with any image editor (Paint, GIMP, Photoshop, Krita).
+- Supports BBR1 PC, BBR1 Android, BBR2 desktop, and BBR2 Android texture formats, including ETC/ETC2 mobile textures.
 - Delete-and-paste workflow works perfectly — the repacker auto-detects edits via modification time.
 
 ### 🎁 Mod Config export (new in 1.7)
@@ -83,9 +84,14 @@ If you've ever wanted to:
 - Hacker-style decode log for visual flair.
 
 ### 📦 Self-contained — zero dependencies
-- Ships with an embedded Python 3.12 runtime + Pillow + numpy + texture2ddecoder.
+- Ships with an embedded Python 3.12 runtime + Pillow + numpy + texture2ddecoder + etcpak.
 - Works on fresh Windows installs without installing anything else.
 - **~23 MB installer**, ~80 MB installed footprint.
+
+### 🧩 Multi-APF import (new in 1.9)
+- Import `Assets.apf`, optional `Expansion.apf`, and optional `HF.apf`.
+- Repack loops over every imported APF, so extra BBR archives are preserved in the workflow instead of being ignored.
+- BBR2 JSON tables decode to editable `.bin.json` and pack back into APF when changed.
 
 ### ⭐ Built-in tutorial
 - Curated **"Quick Hacks for BBR1"** — 8 hand-picked beginner mods, each with the exact file path and the exact value to change.
@@ -96,7 +102,7 @@ If you've ever wanted to:
 <div align="center">
 
 <img src="docs/screenshots/import.png" alt="Import screen" width="720" />
-<p><em>Step 1 — Import your Assets.apf and optional Expansion.apf</em></p>
+<p><em>Step 1 — Import Assets.apf, optional Expansion.apf, and optional HF.apf</em></p>
 
 <img src="docs/screenshots/editor.png" alt="Smart form editor" width="720" />
 <p><em>Step 2 — Smart form editing with hint tooltips for every field</em></p>
@@ -123,10 +129,10 @@ Grab the latest installer from the [**GitHub Releases**](https://github.com/some
 ## How to use
 
 ### Step 1 — Install
-Run `BBR APF Studio_1.8.1_x64-setup.exe`. Standard Windows installer — Start-menu shortcut + desktop icon.
+Run `BBR APF Studio_1.9.0_x64-setup.exe`. Standard Windows installer — Start-menu shortcut + desktop icon.
 
 ### Step 2 — Launch & import
-Open **BBR APF Studio**. On the **Import** tab, pick your game's `Assets.apf` (required) and optionally `Expansion.apf`. The files live in your Beach Buggy Racing install folder — typically under `C:\Program Files\WindowsApps\VectorUnit.BeachBuggyRacing_...\` (Microsoft Store version) or wherever you installed it manually.
+Open **BBR APF Studio**. On the **Import** tab, pick your game's `Assets.apf`, optional `Expansion.apf`, and optional `HF.apf`. The files live in your Beach Buggy install folder, APK asset folder, or wherever you extracted the game archives.
 
 Click **Extract & Enter Studio →**. Progress bar fills live as Python unpacks the archives.
 
@@ -138,7 +144,7 @@ Click **Extract & Enter Studio →**. Progress bar fills live as Python unpacks 
 Go to the **Repack** tab. Pick an output folder. Click **🚀 Repack & Export**. Studio rebuilds your modded `.apf` files with every edit applied.
 
 ### Step 5 — Install into game
-Copy the files from your chosen output folder into your Beach Buggy Racing install folder, overwriting `Assets.apf` / `Expansion.apf`. **Always back up the originals first.** Launch the game.
+Copy the files from your chosen output folder into your Beach Buggy install folder, overwriting the matching APFs. **Always back up the originals first.** Launch the game.
 
 ## Quick Hack Showcase
 
@@ -160,8 +166,8 @@ For full step-by-step guides, **open the app → click Hacks** in the top bar, o
 
 | Game | Status |
 |---|---|
-| **Beach Buggy Racing (BBR1) — Windows / Microsoft Store** | ✅ Fully supported, battle-tested |
-| **Beach Buggy Racing 2 (BBR2)** | ⚠️ Not tested yet — same engine, likely compatible, may need parser updates |
+| **Beach Buggy Racing (BBR1) — Windows / Microsoft Store / Android** | ✅ Supported |
+| **Beach Buggy Racing 2 (BBR2) — desktop / Android** | ✅ Supported for APF extract/repack, JSON, PNG, music, and SFX workflows |
 | Other Vector Unit games (Riptide GP, Hydro Thunder) | ⚠️ Not tested |
 
 ## What can't be edited?
@@ -227,7 +233,7 @@ This is an **unofficial** community tool. Beach Buggy Racing is © Vector Unit. 
 
 ### Happy modding
 
-Built with ❤️ by **[someless](https://youtube.com/@someless)** &middot; **v1.8.1** &middot; **2026**
+Built with ❤️ by **[someless](https://youtube.com/@someless)** &middot; **v1.9.0** &middot; **2026**
 
 If BBR Studio helped you, a ⭐ on this repo goes a long way.
 
